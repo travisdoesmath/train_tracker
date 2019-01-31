@@ -30,10 +30,9 @@ class CTA:
     def get_train_data(self):
         logging.basicConfig(filename="logfile")
         response = {}
-        url = f'http://lapi.transitchicago.com/api/1.0/ttpositions.aspx?key={cta_api_key}&rt=red,blue,brn,org,p,pink,y&outputType=JSON'
+        url = f'http://lapi.transitchicago.com/api/1.0/ttpositions.aspx?key={self.api_key}&rt=red,blue,brn,org,p,pink,y&outputType=JSON'
         try:
             response = requests.get(url).json()
-            response.raise_for_status()
         except requests.exceptions.RequestException as e:  
             logging.exception(e)
         except requests.exceptions.HTTPError as e:
