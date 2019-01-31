@@ -2,6 +2,7 @@ import logging
 import cta_api
 from config import cta_api_key
 import datetime as dt
+import pymongo
 
 
 logger = logging.getLogger('cta_train_collector')
