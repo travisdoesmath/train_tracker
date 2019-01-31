@@ -1,5 +1,5 @@
 import logging
-import cta_api
+from cta_api import CTA
 from config import cta_api_key
 import datetime as dt
 import pymongo
