@@ -22,5 +22,5 @@ while(True):
     db.cta_raw_responses.insert_one(response)
     trains = cta.parse_train_response(response)
     db.cta_trains.insert_many(trains)
-    print(f"{len(trains)" trains collected at {dt.datetime.now()}")
+    print(f"{len(trains)} trains collected at {dt.datetime.now()}")
     sleep(5)
