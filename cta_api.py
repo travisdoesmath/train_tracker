@@ -14,6 +14,7 @@ class CTA:
         trains = []
         try:
             timestamp = response['ctatt']['tmst']
+            time = parse(timestamp) 
             for route in response['ctatt']['route']:
                 name = route['@name']
                 if 'train' in route.keys():
@@ -22,6 +23,7 @@ class CTA:
                     for train in route['train']:
                         train['line'] = name
                         train['tmst'] = timestamp
+                        train['time'] = time
                         trains.append(train)
         except ValueError as e:
             self.logger.error(e)
